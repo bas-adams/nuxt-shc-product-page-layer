@@ -1,0 +1,85 @@
+query getProduct($filter: ProductFilterInput!) {
+    products(filter: $filter) {
+        items {
+            active
+            description
+            id
+            metaDescription
+            metaKeywords
+            metaTitle
+            name
+            rating
+            shortDescription
+            sku
+            url
+            badges {
+                code
+                label
+            }
+            details {
+                items
+                name
+            }
+            images {
+                alt
+                id
+                name
+                src
+            }
+            priceRange {
+                maximumPrice {
+                    finalPrice {
+                        value
+                        currency {
+                            name
+                            shortName
+                            symbol
+                        }
+                    }
+                    regularPrice {
+                        value
+                        currency {
+                            name
+                            shortName
+                            symbol
+                        }
+                    }
+                }
+                minimumPrice {
+                    finalPrice {
+                        value
+                        currency {
+                            name
+                            shortName
+                            symbol
+                        }
+                    }
+                    regularPrice {
+                        value
+                        currency {
+                            name
+                            shortName
+                            symbol
+                        }
+                    }
+                }
+            }
+            reviews {
+                totalCount
+                items {
+                    content
+                    createdAt
+                    id
+                    points
+                    title
+                    updatedAt
+                }
+                pageInfo {
+                    currentPage
+                    pageSize
+                    totalPages
+                }
+            }
+        }
+    }
+}
